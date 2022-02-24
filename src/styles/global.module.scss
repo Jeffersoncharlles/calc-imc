@@ -1,0 +1,39 @@
+* {
+
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font: 400 1rem 'Raleway', Roboto, Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+
+
+html {
+
+    //padrao 16px
+    @media (max-width: 1080px) {
+        //16*0.975 = 15px
+        font-size: 93.75%; //15px
+    }
+
+    @media (max-width: 720px) {
+        font-size: 87.5%; //14px
+    }
+
+    //rem = 1 rem = font-size = page
+}
+
+
+.container {
+    max-width: 1216px;
+    margin: 40px auto;
+}
+
+
+.containerHeader {
+    max-width: 1216px;
+    margin: 40px auto;
+}
