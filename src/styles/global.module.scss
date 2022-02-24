@@ -10,6 +10,20 @@ body {
     box-sizing: border-box;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+span,
+p {
+    display: inline-block;
+}
+
 
 html {
 
@@ -34,6 +48,30 @@ html {
 
 
 .containerHeader {
-    max-width: 1216px;
-    margin: 40px auto;
+    // max-width: 1216px;
+    // margin: 40px auto;
+}
+
+.containerMain {
+    display: flex;
+}
+
+.containerLeft {
+    flex: 1;
+    margin-right: 2.5rem;
+
+    h1 {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
+
+    p {
+        line-height: 1.5;
+    }
+}
+
+.containerRight {
+    flex: 1;
+    margin-left: 2.5rem;
 }
