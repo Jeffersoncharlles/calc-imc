@@ -1,4 +1,7 @@
 ### Calc-IMC
+<h1 align='center'>
+  <img src='./screnn/logo.png'>
+</h1>
 
 <div align="center">
   <a href="https://opensource.org/licenses/MIT"><img alt="License MIT" src="https://img.shields.io/badge/license-MIT-brightgreen"></a>
@@ -11,15 +14,19 @@
   <a href="#key-license">License</a>
 </p>
 
-<!-- <h1 align="center">
-  <img alt="FrontHeat" title="#FrontHeat" src="./screen/home.png"/>
-</h1> -->
+<h1 align="center">
+  <img alt="FrontHeat" title="#FrontHeat" src="./screnn/imchonme.png"/>
+</h1>
 
 ### Premium Partners
 
-- Typescript
-- React Router Dom v6
-- Toast
+This Front-End project was developed using the following technologies:
+
+-   [Typescript][typescript]
+-   [Sass][sass]
+-   [React Icons][react-icons]
+-   [react Toastify][react-toastify]
+
 
 
 <div align='center'>
@@ -28,3 +35,10 @@
 </div>
 ## License
 
+[typescript]: https://www.typescriptlang.org/
+[sass]: https://sass-lang.com/
+[react-icons]: https://react-icons.github.io/react-icons/
+[react-toastify]: https://fkhadra.github.io/react-toastify/
+[git]: https://git-scm.com
+[license]: ./LICENSE
+[linkedin]: https://www.linkedin.com/in/jeffersoncharlles/
