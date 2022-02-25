@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { Header } from './components/Header'
+import { calculateImc, levels } from './helpers/imc';
 import styles from './styles/global.module.scss'
 
 export const App = () => {
@@ -8,8 +9,11 @@ export const App = () => {
     const [weightField, setWeightField] = useState<number>(0);
 
 
+
+
     const handleCalculateIMC = () => {
         if (heightField && weightField) {
+            // calculateImc(heightField, weightField)
 
         } else {
             toast.warning("Digite todos os campos.")
@@ -41,7 +45,7 @@ export const App = () => {
                     <button onClick={handleCalculateIMC}>Calcular</button>
                 </section>
                 <section className={styles.containerRight}>
-                    ...
+
                 </section>
             </main>
         </div>
