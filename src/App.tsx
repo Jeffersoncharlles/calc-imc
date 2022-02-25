@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { BsArrowLeft } from 'react-icons/bs';
 import { toast } from 'react-toastify';
 import { Header } from './components/Header'
 import { Imc } from './components/Imc';
 import { calculateImc, ILevels, levels } from './helpers/imc';
+
 import styles from './styles/global.module.scss'
 
 export const App = () => {
@@ -23,6 +25,12 @@ export const App = () => {
 
     }
 
+    const handleBackButton = () => {
+        setShowLevel(null)
+        setHeightField(0)
+        setWeightField(0)
+    }
+
     return (
         <div className={styles.container}>
             <Header />
@@ -36,15 +44,17 @@ export const App = () => {
                         type="number"
                         value={heightField > 0 ? heightField : ''}
                         onChange={(e) => setHeightField(parseFloat(e.target.value))}
+                        disabled={showLevel ? true : false}
                     />
                     <input
                         placeholder='Digite o seu peso. EX: 76.3  (em kg)'
                         type="number"
                         value={weightField > 0 ? weightField : ''}
                         onChange={(e) => setWeightField(parseFloat(e.target.value))}
+                        disabled={showLevel ? true : false}
                     />
 
-                    <button onClick={handleCalculateIMC}>Calcular</button>
+                    <button onClick={handleCalculateIMC} disabled={showLevel ? true : false}>Calcular</button>
                 </section>
                 <section className={styles.containerRight}>
                     {!showLevel &&
@@ -56,9 +66,7 @@ export const App = () => {
                     }
                     {showLevel &&
                         <div className={styles.containerRight_Big}>
-                            <div className={styles.containerRight_Big_Arrow}>
-
-                            </div>
+                            <BsArrowLeft size={24} onClick={handleBackButton} />
                             <Imc data={showLevel} />
                         </div>
                     }

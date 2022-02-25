@@ -83,6 +83,10 @@ html {
         margin-bottom: 1.25rem;
         font-size: 1rem;
         outline: 0;
+
+        &:disabled {
+            opacity: .5;
+        }
     }
 
     button {
@@ -100,6 +104,10 @@ html {
 
         &:hover {
             filter: brightness(0.9);
+        }
+
+        &:disabled {
+            opacity: .5;
         }
     }
 }
@@ -124,5 +132,103 @@ html {
         margin-top: 4rem;
         display: flex;
         flex: 1;
+
+        >svg {
+            position: absolute;
+            background: #227C9D;
+            width: 4.375rem;
+            height: 4.375rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            color: #FFF;
+            margin-left: -2.1875rem; //35px
+            margin-top: 13rem; //208px
+            transition: filter ease 0.3s;
+
+            &:hover {
+                filter: brightness(0.9);
+            }
+        }
     }
+}
+
+@media (max-width: 1238px) {
+
+    //notebook
+    header {
+        padding: 0 20px;
+    }
+
+    .containerMain {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 777px) {
+
+    //tablet
+    header {
+        padding: 0 20px;
+    }
+
+    .containerMain {
+        padding: 0 20px;
+        flex-direction: column;
+    }
+
+    .containerLeft {
+        margin-right: 0;
+
+        button {
+            margin-top: 1.5rem;
+        }
+
+    }
+
+    .containerRight {
+        margin-left: 0;
+
+        .containerGrid {
+            margin-top: 2rem;
+        }
+
+        &_Big {
+            margin-top: 2rem;
+            display: flex;
+            flex: 1;
+
+            >svg {
+                margin-left: 0;
+                margin-top: 0;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width:430px) {
+
+    //cellphone
+    .containerRight {
+        .containerGrid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .containerLeft {
+        h1 {
+            font-size: 3rem;
+        }
+
+        p {
+
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: #6A7D8B;
+        }
+    }
+
 }
