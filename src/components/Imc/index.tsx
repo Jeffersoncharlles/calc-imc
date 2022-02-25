@@ -1,5 +1,5 @@
 import styles from './styles.module.scss'
-import { } from 'react-icons'
+import { BsHandThumbsDownFill, BsHandThumbsUpFill } from 'react-icons/bs'
 
 interface IImcProps {
     data: {
@@ -14,8 +14,15 @@ interface IImcProps {
 export const Imc = ({ data }: IImcProps) => {
 
     return (
-        <div className={styles.containerImcLeves}>
+        <div className={styles.containerImcLeves} style={{ background: data.color }}>
+            <div className={styles.containerImcLeves_icons}>
+                {data.icon === 'up' && <BsHandThumbsUpFill size={30} />}
+                {data.icon === 'down' && <BsHandThumbsDownFill size={30} />}
+            </div>
             <h1>{data.title}</h1>
+            <p>
+                IMC está entre <strong>{data.imc[0]}</strong> e <strong>{data.imc[1]}</strong>
+            </p>
         </div>
     );
 }
