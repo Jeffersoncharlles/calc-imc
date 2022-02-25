@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { Header } from './components/Header'
+import { Imc } from './components/Imc';
 import { calculateImc, levels } from './helpers/imc';
 import styles from './styles/global.module.scss'
 
@@ -45,7 +46,11 @@ export const App = () => {
                     <button onClick={handleCalculateIMC}>Calcular</button>
                 </section>
                 <section className={styles.containerRight}>
-
+                    <div className={styles.containerGrid}>
+                        {levels.map((imc, index) => (
+                            <Imc key={index} data={imc} />
+                        ))}
+                    </div>
                 </section>
             </main>
         </div>
