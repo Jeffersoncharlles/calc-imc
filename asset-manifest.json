@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/calc-imc/static/css/main.36aa584a.css",
+    "main.js": "/calc-imc/static/js/main.aa358ce4.js",
+    "index.html": "/calc-imc/index.html",
+    "main.36aa584a.css.map": "/calc-imc/static/css/main.36aa584a.css.map",
+    "main.aa358ce4.js.map": "/calc-imc/static/js/main.aa358ce4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.36aa584a.css",
+    "static/js/main.aa358ce4.js"
+  ]
+}
