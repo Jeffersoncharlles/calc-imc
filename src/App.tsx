@@ -2,19 +2,20 @@ import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { Header } from './components/Header'
 import { Imc } from './components/Imc';
-import { calculateImc, levels } from './helpers/imc';
+import { calculateImc, ILevels, levels } from './helpers/imc';
 import styles from './styles/global.module.scss'
 
 export const App = () => {
     const [heightField, setHeightField] = useState<number>(0);
     const [weightField, setWeightField] = useState<number>(0);
+    const [showLevel, setShowLevel] = useState<ILevels | null>(null);
 
 
 
 
     const handleCalculateIMC = () => {
         if (heightField && weightField) {
-            // calculateImc(heightField, weightField)
+            setShowLevel(calculateImc(heightField, weightField));
 
         } else {
             toast.warning("Digite todos os campos.")
@@ -46,11 +47,21 @@ export const App = () => {
                     <button onClick={handleCalculateIMC}>Calcular</button>
                 </section>
                 <section className={styles.containerRight}>
-                    <div className={styles.containerGrid}>
-                        {levels.map((imc, index) => (
-                            <Imc key={index} data={imc} />
-                        ))}
-                    </div>
+                    {!showLevel &&
+                        <div className={styles.containerGrid}>
+                            {levels.map((imc, index) => (
+                                <Imc key={index} data={imc} />
+                            ))}
+                        </div>
+                    }
+                    {showLevel &&
+                        <div className={styles.containerRight_Big}>
+                            <div className={styles.containerRight_Big_Arrow}>
+
+                            </div>
+                            <Imc data={showLevel} />
+                        </div>
+                    }
                 </section>
             </main>
         </div>

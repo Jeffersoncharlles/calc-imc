@@ -119,4 +119,10 @@ html {
         margin-top: 4rem;
 
     }
+
+    &_Big {
+        margin-top: 4rem;
+        display: flex;
+        flex: 1;
+    }
 }

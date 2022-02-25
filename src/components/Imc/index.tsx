@@ -20,6 +20,10 @@ export const Imc = ({ data }: IImcProps) => {
                 {data.icon === 'down' && <BsHandThumbsDownFill size={30} />}
             </div>
             <h1>{data.title}</h1>
+            {data.yourImc &&
+                <article>Seu IMC é de <strong>{data.yourImc}  kg/m²</strong></article>
+            }
+
             <p>
                 IMC está entre <strong>{data.imc[0]}</strong> e <strong>{data.imc[1]}</strong>
             </p>

@@ -19,7 +19,7 @@ export const levels: ILevels[] = [
     { title: 'Obesidade', color: '#C3423F', icon: 'down', imc: [30.1, 99] },
 ];
 
-export const calculateImc = ({ height, weight }: ImcProps) => {
+export const calculateImc = (height: number, weight: number) => {
     //peso dividido pela a raiz quadrada da altura
     const imc = weight / (height * height);
 
@@ -28,7 +28,7 @@ export const calculateImc = ({ height, weight }: ImcProps) => {
         //e for menor ou igual array posição 1
         if (imc >= levels[i].imc[0] && imc < levels[i].imc[1]) {
             //retornar a categoria ja com o imc
-            levels[i].yourImc = imc;
+            levels[i].yourImc = parseFloat(imc.toFixed(2));
             return levels[i];
             //retornar o próprio level
         }
